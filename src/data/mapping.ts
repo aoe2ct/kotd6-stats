@@ -9,7 +9,7 @@ export const mapDraftNameToGameNameMapping: Record<string, string> = {
     "Brood War": "TSDC Brood War",
     "Eredo-Iya": "TSDC Eredo-Iya",
     "Hamburger": "TSDC Hamburger",
-    "Kirby's World": "TSDC Kirby's World",
+    "Kirby's world": "TSDC Kirby's World",
     "Lagoon": "TSDC Lagoon",
     "Meltdown": "TSDC Meltdown",
     "Sand Trap": "TSDC Sand_Trap",
@@ -100,7 +100,7 @@ function mapNameToDisplay(gameName: string) {
         return undefined;
     }
     const sanitizedName = gameName.replace("TSDC ", "").replace("_", " ");
-    if (!(sanitizedName in mapDraftNameToGameNameMapping)) {
+    if (!(Object.keys(mapDraftNameToGameNameMapping).find(name => name.toLowerCase() == sanitizedName.toLowerCase()))) {
         return undefined;
     }
     return sanitizedName;
@@ -127,4 +127,5 @@ export function getBracketImage(bracket: string) {
     return useBaseUrl(BracketNameToImage[bracket]);
 }
 
-export const tournamentMaps = Object.keys(mapDraftNameToGameNameMapping).map(mapDraftNameToDisplay);
+export const tournamentMaps = Object.values(GameNameMappingToDisplayName);
+console.log({ GameNameMappingToDisplayName, tournamentMaps })

@@ -11,7 +11,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from '../components/charts/base.module.css';
 
-<div style={{ display: "flex", justifyContent: 'center', marginBottom: '2em', marginTop: '-4em' }}>
+<div style={{ display: "flex", justifyContent: 'center', marginBottom: '2em' }}>
     <img alt="T90 Sudden Death Cup" src={useBaseUrl("/img/tsdc.webp")} width="350" height="385"/>
 </div>
 # T90 Sudden Death Cup in Stats
