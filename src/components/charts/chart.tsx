@@ -4,14 +4,15 @@ import {
     LinearScale,
     CategoryScale,
     BarElement,
+    LineElement,
     Tooltip,
     Title,
     Legend,
 } from 'chart.js';
 
-ChartJS.register(LinearScale, CategoryScale, BarElement, Tooltip, Title, Legend);
+ChartJS.register(LinearScale, CategoryScale, BarElement, LineElement, Tooltip, Title, Legend);
 
-export default function Chart({data, options}): JSX.Element {
+export default function Chart({ data, options }): JSX.Element {
     return (
         <Bar data={data} options={options}></Bar>
     );

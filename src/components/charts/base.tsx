@@ -56,7 +56,7 @@ export default function Base(): JSX.Element {
             <p>The next chart shows the number of times a civilization was played. If you are curious about a specific map, or ELO range, then use the filters accessible using the filter button on the top-right.</p>
             <CivPlayChart gamesData={filteredGamesData.filter(game => game.map != null)} filter={filter}></CivPlayChart>
             <p>Which civ is the best? Below is the win rate chart. Hover each column to get the important additional context of the number of games played.</p>
-            <CivWinChart gamesData={filteredGamesData.filter(game => game.map != null)} filter={filter}></CivWinChart>
+            <CivWinChart draftsData={filteredDraftsData} gamesData={filteredGamesData.filter(game => game.map != null)} filter={filter}></CivWinChart>
             <p>How long each game was? Let's see on the next graph!</p>
             <GameTimeChart gamesData={filteredGamesData.filter(game => game.map != null)} filter={filter}></GameTimeChart>
             <p>Who is the fastest player in the tournament? We can see the eAPM over all brackets</p>
