@@ -5,12 +5,13 @@ import {
     CategoryScale,
     BarElement,
     LineElement,
+    LineController,
     Tooltip,
     Title,
     Legend,
 } from 'chart.js';
 
-ChartJS.register(LinearScale, CategoryScale, BarElement, LineElement, Tooltip, Title, Legend);
+ChartJS.register(LinearScale, CategoryScale, BarElement, LineElement, LineController, Tooltip, Title, Legend);
 
 export default function Chart({ data, options }): JSX.Element {
     return (
