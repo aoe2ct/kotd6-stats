@@ -1,7 +1,7 @@
 ---
 title: King of the Desert VI in Stats
 description: Statistics for the King of the Desert VI Age of Empires II tournament hosted by MembTV
-image: /img/tsdc.webp
+image: /img/King_of_the_Desert_VI.png
 ---
 
 import Chart from '../components/charts/chart.tsx'
