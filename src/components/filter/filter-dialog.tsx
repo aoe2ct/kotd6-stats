@@ -72,18 +72,6 @@ export default function FilterDialog(): JSX.Element {
 
     return (
         <dialog id="filter-dialog" className={styles['dialog']}>
-            <h2>Maps</h2>
-            <div className={styles['map-container']}>
-                {Object.entries(GameNameMappingToDisplayName).map(([mapGameName, mapDisplayName]) =>
-                    <FilterMapItem
-                        key={mapGameName}
-                        imageSrc={useBaseUrl(`/img/maps/${mapGameName.replace(/ /g, "_")}.png`)}
-                        value={filter.maps.includes(mapGameName)}
-                        onChange={onMapFilterChange.bind(this, mapGameName)}
-                        name={mapDisplayName} />
-                )}
-            </div>
-            <hr />
             <h2>Brackets</h2>
             <div className={styles['map-container']}>
                 {Object.keys(BracketNameToImage).map((bracket) =>

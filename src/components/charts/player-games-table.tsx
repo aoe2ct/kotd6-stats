@@ -18,7 +18,7 @@ export default function({ games }) {
         <tbody>
             {games.map(game => {
                 return (
-                    <tr key={game.set_id + game.map} className={game.winner ? styles.winner : styles.loser}>
+                    <tr key={game.set_id + game.duration} className={game.winner ? styles.winner : styles.loser}>
                         <td>{game.opponent}</td>
                         <td><a href={`https://aoe2cm.net/draft/${game.map_draft}`} target="_blank">{game.map_draft}</a></td>
                         <td><a href={`https://aoe2cm.net/draft/${game.civ_draft}`} target="_blank">{game.civ_draft}</a></td>

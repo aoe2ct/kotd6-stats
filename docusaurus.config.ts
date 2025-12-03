@@ -3,7 +3,7 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'T90 Sudden Death Cup in Stats',
+  title: 'King of the Desert VI in Stats',
   tagline: 'Dinosaurs are cool',
   // favicon: 'img/favicon.ico',
 
@@ -11,12 +11,12 @@ const config: Config = {
   url: 'https://aoe2ct.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/tsdc-stats/',
+  baseUrl: '/kotd6-stats/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'aoe2ct', // Usually your GitHub org/user name.
-  projectName: 'tsdc-stats', // Usually your repo name.
+  projectName: 'kotd6-stats', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -46,7 +46,7 @@ const config: Config = {
     // Replace with your project's social card
     defaultMode: 'dark',
     navbar: {
-      title: 'T90 Sudden Death Cup in Stats',
+      title: 'King of the Desert VI in Stats',
       // logo: {
       //   alt: 'My Site Logo',
       //   src: 'img/logo.svg',

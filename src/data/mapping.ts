@@ -3,45 +3,31 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 export const acceptableMisnamedMaps: Record<string, string> = {
 };
 export const mapDraftNameToGameNameMapping: Record<string, string> = {
-    "Acaray": "TSDC Acaray",
-    "Aftermath": "TSDC Aftermath",
-    "Border Dispute": "TSDC Border Dispute",
-    "Brood War": "TSDC Brood War",
-    "Eredo-Iya": "TSDC Eredo-Iya",
-    "Eredo-lya": "TSDC Eredo-Iya",
-    "Hamburger": "TSDC Hamburger",
-    "Kirby's world": "TSDC Kirby's World",
-    "Lagoon": "TSDC Lagoon",
-    "Meltdown": "TSDC Meltdown",
-    "Sand Trap": "TSDC Sand_Trap",
-    "Wellsprings": "TSDC Wellsprings",
 };
 
 export const GameNameMappingToDisplayName: Record<string, string> = Object.fromEntries(Object.values(mapDraftNameToGameNameMapping).map(gameName => [gameName, mapNameToDisplay(gameName)]));
 
 export const BracketNameToImage = {
-    Champions: '/img/brackets/Champion.webp',
-    Monks: '/img/brackets/Monk.webp',
-    Mangonels: '/img/brackets/Mangonel.webp',
-    Knights: '/img/brackets/Knight.webp',
-    Crossbows: '/img/brackets/Crossbowman.webp',
-    Militia: '/img/brackets/Militia.webp',
+    Top64: null,
+    Top32: null,
+    Top16: null,
+    Top8: null
 };
 
 export const bracketColors: { [bracket in keyof typeof BracketNameToImage]: string } = {
-    Champions: "#1f77b4",
-    Monks: "#ff7f0e",
-    Mangonels: "#2ca02c",
-    Knights: "#d62728",
-    Crossbows: "#9467bd",
-    Militia: "#8c564b",
+    Top64: "#1f77b4",
+    Top32: "#ff7f0e",
+    Top16: "#2ca02c",
+    Top8: "#d62728",
+    // Crossbows: "#9467bd",
+    // Militia: "#8c564b",
     // "Group G": "#e377c2",
     // "Group H": "#7f7f7f",
     // "Other": "#bcbd22",
 };
 
-export const winnerStages: string[] = ['Group', 'Quarter Final', 'Semi Final', 'Final'];
-export const loserStages: string[] = ["LB Quarter Final", "LB Semi Final", "LB Final"];
+export const winnerStages: string[] = ['Round of 64', 'Round of 32', 'Round of 16', 'Quarterfinals', 'Semifinals', 'Final'];
+export const loserStages: string[] = [];
 
 export const allCivs = [
     "Britons",
@@ -96,15 +82,8 @@ export const allCivs = [
     "Wu"
 ];
 
-function mapNameToDisplay(gameName: string) {
-    if (!gameName.startsWith("TSDC ")) {
-        return undefined;
-    }
-    const sanitizedName = gameName.replace("TSDC ", "").replace("_", " ");
-    if (!(Object.keys(mapDraftNameToGameNameMapping).find(name => name.toLowerCase() == sanitizedName.toLowerCase()))) {
-        return undefined;
-    }
-    return sanitizedName;
+function mapNameToDisplay(_gameName: string) {
+    return "Arabia"
 }
 export function mapDraftNameToDisplay(draftName: string) {
     return mapNameToDisplay(mapDraftNameToGameNameMapping[draftName] ?? draftName) ?? draftName;

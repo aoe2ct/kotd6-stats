@@ -1,5 +1,5 @@
 ---
-title: T90 Sudden Death Cup in Stats
+title: King of the Desert VI in Stats
 ---
 
 import Players from '../components/charts/players.tsx'

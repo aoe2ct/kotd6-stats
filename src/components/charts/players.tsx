@@ -149,7 +149,7 @@ export default function Base(): JSX.Element {
             <h2>{selectedPlayer}'s Games</h2>
             <PlayerGamesTable games={selectedPlayerData}></PlayerGamesTable>
             {/* <hr></hr> */}
-            Thanks for checking out T90 Sudden Death Cup in Stats!
+            Thanks for checking out King of the Desert VI in Stats!
         </Fragment>
     );
 }
