@@ -122,17 +122,12 @@ export default function Base(): JSX.Element {
             <h2>{selectedPlayer}'s stats</h2>
             <p>{selectedPlayer} played {playerStats.games} games over {playerStats.sets} sets with an average of {roundFloat(playerStats.games / playerStats.sets)} games per set. They won {playerStats.wins} of their games ({playerStats.win_perc})</p>
             <h3>Drafts data</h3>
-            <p>{selectedPlayer}'s most picked map(s) is {playerStats.most_picked_map} and the most banned map(s) is {playerStats.most_banned_map}.</p>
-            <p>This chart is showing the number of times each map was picked or banned during a draft. It is sorted by most picks.</p>
-            <PlayerMapDraftChart pickCounts={playerStats.mapPickCounts} banCounts={playerStats.mapBanCounts} filter={filter}></PlayerMapDraftChart>
-            <p>Next up is civilization picks in the drafts specifically.</p>
+            <p>Here are the civilization picks in the drafts, from most picked to least picked.</p>
             <p>{selectedPlayer}'s most picked civ is/are {playerStats.most_picked_civ} and the most banned civ is/are {playerStats.most_banned_civ}.</p>
-            <p>Here is how they drafted when it comes to civilizations. Snipes are the civilizations that {selectedPlayer} sniped from the enemy selection.</p>
+            <p>Here is how they drafted when it comes to civilizations.</p>
             <PlayerCivDraftChart pickCounts={playerStats.civPickCounts} banCounts={playerStats.civBanCounts} snipeCounts={playerStats.civSnipeCounts} filter={filter}></PlayerCivDraftChart>
             <h3>Games data</h3>
-            <p>Which maps were actually played? {selectedPlayer}'s most played map(s) is {playerStats.most_played_map}</p>
-            <PlayerMapPlayedChart winCounts={playerStats.mapWinCounts} lossCounts={playerStats.mapLossCounts} filter={filter}></PlayerMapPlayedChart>
-            <p>The next chart shows the number of times a civilization was played.</p>
+            <p>The next chart shows the number of times a civilization was actually played.</p>
             <p>{selectedPlayer} played most times with {playerStats.most_played_civ} and faced most times against {playerStats.most_faced_civ}.</p>
             <PlayerCivPlayedChart title='Civilizations played' civWinCounts={playerStats.civWinCounts} civLossCounts={playerStats.civLossCounts} filter={filter}></PlayerCivPlayedChart>
             <p>Let's look at the civs that were faced and whether {selectedPlayer} managed to win against them.</p>
