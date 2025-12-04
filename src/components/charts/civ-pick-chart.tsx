@@ -29,12 +29,22 @@ export default function CivPickChart({ draftsData, filter }: { draftsData: { civ
             {},
         )
     };
+    const mutualPicks: Record<string, number> = draftsData.civDrafts.map(draft => draft.draft.filter(choice => choice.action == 'pick').map(choice => choice.map).reduce((occurrences, civ) => {
+        if (!(civ in occurrences)) {
+            occurrences[civ] = -1;
+        }
+        occurrences[civ] += 1;
+        return occurrences;
+    }, {} as Record<string, number>)).reduce((occurrences, draftCounts) => {
+        return { ...occurrences, ...Object.fromEntries(Object.entries(draftCounts).map(([civ, count]) => [civ, count + (occurrences[civ] ?? 0)])) };
+    }, {} as Record<string, number>);
     const pick_data = [];
-    const snipe_data = [];
+    const mutual_data = [];
     const keys = [];
     for (const [key, value] of Object.entries(draftPickData).sort(([_ka, a], [_kb, b]) => b.pick + b.snipe - a.pick - a.snipe)) {
-        pick_data.push(value.pick);
-        snipe_data.push(value.snipe);
+        const mutual = (mutualPicks[key] ?? 0) * 2
+        pick_data.push(value.pick - mutual);
+        mutual_data.push(mutual);
         keys.push(key);
     }
 
@@ -62,11 +72,11 @@ export default function CivPickChart({ draftsData, filter }: { draftsData: { civ
             label: "Picks"
         },
         {
-            data: snipe_data,
-            backgroundColor: snipe_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-darkest') : style.getPropertyValue('--ifm-color-secondary-darkest')),
-            borderColor: snipe_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-dark') : style.getPropertyValue('--ifm-color-secondary-dark')),
+            data: mutual_data,
+            backgroundColor: mutual_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-darkest') : style.getPropertyValue('--ifm-color-secondary-darkest')),
+            borderColor: mutual_data.map((_v, i) => i % 2 === 0 ? style.getPropertyValue('--ifm-color-primary-dark') : style.getPropertyValue('--ifm-color-secondary-dark')),
             borderWidth: 1,
-            label: "Sniped picks"
+            label: "Mutual picks"
         }], labels: keys
     }} options={options}></Chart>;
 };
