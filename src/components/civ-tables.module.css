@@ -16,6 +16,10 @@
     --ifm-col-width: calc(12 / 12 * 100%);
 }
 
+:global(.theme-unlisted-banner) {
+    display: none !important;
+}
+
 nav {
     display: none !important;
 }
