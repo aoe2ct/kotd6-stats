@@ -1,5 +1,7 @@
 ---
 title: King of the Desert VI in Stats
+description: Civ statistics for King of the Desert VI Age of Empires II tournament hosted by MembTV
+image: /img/King_of_the_Desert_VI.png
 unlisted: true
 ---
 
