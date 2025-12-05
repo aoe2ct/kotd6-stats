@@ -1,0 +1,115 @@
+@font-face {
+    font-family: Muara;
+    src: url(/Muara.ttf);
+}
+
+:root {
+    --ifm-font-family-base: Muara;
+    --ifm-container-width-xl: 100wv;
+    --ifm-table-border-width: 0;
+    --ifm-table-head-color: whitesmoke;
+    --ifm-table-cell-color: white;
+    --ifm-table-cell-padding: 1px 4px 1px 1px;
+}
+
+:global(.col--8) {
+    --ifm-col-width: calc(12 / 12 * 100%);
+}
+
+nav {
+    display: none !important;
+}
+
+.statsTable {
+    display: flex;
+    flex-direction: row;
+    /* Essentially just transform the tables to be smaller, very hacky */
+    zoom: 0.7;
+    margin-left: 82px;
+}
+
+table.civs {
+    border-collapse: collapse;
+    background-color: #28045C;
+    border-radius: 1rem;
+}
+
+table.civs:nth-child(2),
+table.civs:nth-child(3) {
+    margin-left: 42px;
+}
+
+tbody tr:nth-child(2n+1) {
+    background-color: #53168B;
+}
+
+.civs th {
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-size: 1.25rem;
+    padding: 0.5rem 1.5rem;
+}
+
+th.civ {
+    text-align: left;
+}
+
+th.adminBans {
+    font-size: 1rem;
+    width: 40px;
+}
+
+.civs td {
+    font-size: 1.75rem;
+    text-align: center;
+    position: relative;
+}
+
+.civs td.civ {
+    padding: 0.6rem 1.5rem;
+    text-align: left;
+}
+
+
+
+td.wins {
+    color: #22c55e;
+}
+
+td.losses {
+    color: #ef4444;
+}
+
+td::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 2px;
+    height: 80%;
+    background: linear-gradient(to bottom, transparent, #8a8a8a, transparent);
+}
+
+td:last-child::after {
+    display: none;
+}
+
+
+.civ-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 200px;
+}
+
+.civ-cell img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+}
+
+/* This is to display the row */
+.extraInfo {
+    display: inline-block;
+    height: 56px;
+}
