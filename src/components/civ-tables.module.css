@@ -28,7 +28,7 @@ nav {
     display: flex;
     flex-direction: row;
     /* Essentially just transform the tables to be smaller, very hacky */
-    zoom: 0.7;
+    zoom: 0.9;
     margin-left: 82px;
 }
 
