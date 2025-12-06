@@ -7,7 +7,7 @@ const gameStats = gamesData.reduce((stats, game) => {
   return {
     ...stats,
     [game.winningCiv]: { wins: 1 + (stats[game.winningCiv]?.wins ?? 0), losses: stats[game.winningCiv]?.losses ?? 0 },
-    [game.losingCiv]: { wins: stats[game.winningCiv]?.wins ?? 0, losses: 1 + (stats[game.winningCiv]?.losses ?? 0) }
+    [game.losingCiv]: { wins: stats[game.losingCiv]?.wins ?? 0, losses: 1 + (stats[game.losingCiv]?.losses ?? 0) }
   };
 }, {})
 const draftStats = draftsData.civDrafts.reduce((stats, draft) => {
@@ -95,7 +95,6 @@ function CivStats({ stats }) {
     </tbody>
   </table>
 }
-console.log(civStats.slice(0, 17));
 export default function civTables() {
   return <div className={styles.statsTable}>
     <CivStats stats={civStats.slice(0, 17)} />
