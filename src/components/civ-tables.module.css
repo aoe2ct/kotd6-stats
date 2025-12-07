@@ -34,6 +34,11 @@ nav {
     margin-right: 82px;
 }
 
+.statsTable h2 {
+    text-align: center;
+    color: white;
+}
+
 table.civs {
     border-collapse: collapse;
     background-color: #28045C;
