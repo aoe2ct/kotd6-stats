@@ -25,22 +25,20 @@ nav {
 }
 
 .statsTable {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px 42px;
     /* Essentially just transform the tables to be smaller, very hacky */
     zoom: 0.9;
     margin-left: 82px;
+    margin-right: 82px;
 }
 
 table.civs {
     border-collapse: collapse;
     background-color: #28045C;
     border-radius: 1rem;
-}
-
-table.civs:nth-child(2),
-table.civs:nth-child(3) {
-    margin-left: 42px;
+    display: table;
 }
 
 tbody tr:nth-child(2n+1) {
@@ -54,11 +52,11 @@ tbody tr:nth-child(2n+1) {
     padding: 0.5rem 1.5rem;
 }
 
-th.civ {
+.civs th.civ {
     text-align: left;
 }
 
-th.adminBans {
+.civs th.adminBans {
     font-size: 1rem;
     width: 40px;
 }
@@ -76,15 +74,15 @@ th.adminBans {
 
 
 
-td.wins {
+.civs td.wins {
     color: #22c55e;
 }
 
-td.losses {
+.civs td.losses {
     color: #ef4444;
 }
 
-td::after {
+.civs td::after {
     content: "";
     position: absolute;
     top: 10%;
@@ -94,7 +92,7 @@ td::after {
     background: linear-gradient(to bottom, transparent, #8a8a8a, transparent);
 }
 
-td:last-child::after {
+.civs td:last-child::after {
     display: none;
 }
 
