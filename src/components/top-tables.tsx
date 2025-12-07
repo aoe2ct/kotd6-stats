@@ -29,7 +29,7 @@ const leastPlayed = civStats.filter(civ => civ.playerPicks > 1).toSorted((civ1, 
   if (playRate1 != playRate2) {
     return playRate1 - playRate2;
   }
-  return civ2.playerPicks - civ1.playerPicks;
+  return civ1.playerPicks - civ2.playerPicks;
 }).slice(0, 6);
 
 const leastPicked = civStats.toSorted((civ1, civ2) => {
@@ -77,7 +77,7 @@ export default function civTables() {
       <CivStats stats={topBanned} />
     </div>
     <div>
-      <h2>Least played among picks</h2>
+      <h2>Least played among picks (min. 2 picks)</h2>
       <CivStats stats={leastPlayed} />
     </div>
     <div>
