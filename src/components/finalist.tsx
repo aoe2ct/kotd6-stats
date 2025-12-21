@@ -62,10 +62,6 @@ export default function Finalist({ name, reverse = false }) {
         </thead>
         <tbody>
           <tr>
-            <td>Overall</td>
-            <td>{playerData?.duration?.cumulative}</td>
-          </tr>
-          <tr>
             <td>Longest game</td>
             <td>0{playerData?.duration?.longest}</td>
           </tr>
@@ -76,6 +72,10 @@ export default function Finalist({ name, reverse = false }) {
           <tr>
             <td>Median</td>
             <td>0{playerData?.duration?.median}</td>
+          </tr>
+          <tr>
+            <td>Overall</td>
+            <td>{playerData?.duration?.cumulative}</td>
           </tr>
         </tbody>
       </table>
