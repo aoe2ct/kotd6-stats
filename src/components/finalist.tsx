@@ -6,7 +6,7 @@ async function get_data(name: string) {
   const data = await import(`../data/${name.toLowerCase()}.json`);
   return data.default;
 }
-export default function Finalist({ name }) {
+export default function Finalist({ name, reverse = false }) {
   const [playerData, setPlayerData] = useState({});
 
   useEffect(() => {
@@ -17,9 +17,10 @@ export default function Finalist({ name }) {
   }, [name]);
 
   return <div className={styles.finalistCard}>
-    <img src={useBaseUrl(`/img/${name.toLowerCase()}.png`)} />
-    <div className={styles.finalistTables} >
-      <h1>{name}</h1>
+    <div className={styles.playerImage}>
+      <img src={useBaseUrl(`/img/${name.toLowerCase()}.png`)} />
+    </div>
+    <div className={styles.finalistTables + ' ' + styles.playerStats} >
       <table className={styles.civs}>
         <colgroup>
           <col width={400} />
@@ -45,7 +46,7 @@ export default function Finalist({ name }) {
           </tr>
           <tr>
             <td>Favourite Colour</td>
-            <td>{playerData['color']}</td>
+            <td><div className={`${styles['player-color']} ${styles['player-color-' + playerData['color']]}`}>{playerData['color']}</div></td>
           </tr>
         </tbody>
       </table>
@@ -78,6 +79,64 @@ export default function Finalist({ name }) {
           </tr>
         </tbody>
       </table>
+    </div>
+    <div className={styles.finalistTables + ' ' + styles.gamesStats}>
+      <table className={styles.civs}>
+        <colgroup>
+          <col width={400} />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th colSpan={2}>eAPM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Max</td>
+            <td>{playerData?.eapm?.max}</td>
+          </tr>
+          <tr>
+            <td>Min</td>
+            <td>{playerData?.eapm?.min}</td>
+          </tr>
+          <tr>
+            <td>Median</td>
+            <td>{playerData?.eapm?.median}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table className={styles.civs}>
+        <colgroup>
+          <col width={400} />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th colSpan={2}>Vils queued</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Max</td>
+            <td>{playerData?.vils_queued?.max}</td>
+          </tr>
+          <tr>
+            <td>Min</td>
+            <td>{playerData?.vils_queued?.min}</td>
+          </tr>
+          <tr>
+            <td>Median</td>
+            <td>{playerData?.vils_queued?.median}</td>
+          </tr>
+          <tr>
+            <td>Overall</td>
+            <td>{playerData?.vils_queued?.total}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div className={styles.finalistTables + ' ' + styles.civStats}>
       <table className={styles.civs}>
         <colgroup>
           <col width={400} />
@@ -136,60 +195,6 @@ export default function Finalist({ name }) {
                 <span>{playerData?.civ_played_longest?.name} (0{playerData?.civ_played_longest?.duration})</span>
               </div>
             </td>
-          </tr>
-        </tbody>
-      </table>
-      <table className={styles.civs}>
-        <colgroup>
-          <col width={400} />
-          <col />
-        </colgroup>
-        <thead>
-          <tr>
-            <th colSpan={2}>eAPM</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Max</td>
-            <td>{playerData?.eapm?.max}</td>
-          </tr>
-          <tr>
-            <td>Min</td>
-            <td>{playerData?.eapm?.min}</td>
-          </tr>
-          <tr>
-            <td>Median</td>
-            <td>{playerData?.eapm?.median}</td>
-          </tr>
-        </tbody>
-      </table>
-      <table className={styles.civs}>
-        <colgroup>
-          <col width={400} />
-          <col />
-        </colgroup>
-        <thead>
-          <tr>
-            <th colSpan={2}>Vils queued</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Max</td>
-            <td>{playerData?.vils_queued?.max}</td>
-          </tr>
-          <tr>
-            <td>Min</td>
-            <td>{playerData?.vils_queued?.min}</td>
-          </tr>
-          <tr>
-            <td>Median</td>
-            <td>{playerData?.vils_queued?.median}</td>
-          </tr>
-          <tr>
-            <td>Overall</td>
-            <td>{playerData?.vils_queued?.total}</td>
           </tr>
         </tbody>
       </table>
