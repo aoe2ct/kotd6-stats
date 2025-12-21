@@ -21,6 +21,10 @@ export default function Finalist({ name }) {
     <div className={styles.finalistTables} >
       <h1>{name}</h1>
       <table className={styles.civs}>
+        <colgroup>
+          <col width={400} />
+          <col />
+        </colgroup>
         <thead>
           <tr>
             <th colSpan={2}>Player stats</th>
@@ -99,6 +103,10 @@ export default function Finalist({ name }) {
         </tbody>
       </table>
       <table className={styles.civs}>
+        <colgroup>
+          <col width={400} />
+          <col />
+        </colgroup>
         <thead>
           <tr>
             <th colSpan={2}>Civ stats</th>
