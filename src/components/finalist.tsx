@@ -66,15 +66,15 @@ export default function Finalist({ name }) {
           </tr>
           <tr>
             <td>Longest game</td>
-            <td>{playerData?.duration?.longest}</td>
+            <td>0{playerData?.duration?.longest}</td>
           </tr>
           <tr>
             <td>Shortest game</td>
-            <td>{playerData?.duration?.shortest}</td>
+            <td>0{playerData?.duration?.shortest}</td>
           </tr>
           <tr>
             <td>Median</td>
-            <td>{playerData?.duration?.median}</td>
+            <td>0{playerData?.duration?.median}</td>
           </tr>
         </tbody>
       </table>
@@ -133,7 +133,7 @@ export default function Finalist({ name }) {
             <td className={styles.civ}>
               <div className={styles['civ-cell']}>
                 <img src={`https://aoe2techtree.net/img/Civs/${playerData?.civ_played_longest?.name?.toLowerCase()}.png`} width="32" height="32" alt={playerData?.civ_played_longest?.name + " emblem"} loading="lazy" />
-                <span>{playerData?.civ_played_longest?.name} ({playerData?.civ_played_longest?.duration})</span>
+                <span>{playerData?.civ_played_longest?.name} (0{playerData?.civ_played_longest?.duration})</span>
               </div>
             </td>
           </tr>
