@@ -45,8 +45,7 @@ nav {
         "image image"
         "player games"
         "civ civ";
-    grid-template-rows: 1fr 1fr 1fr;
-    zoom: 0.8;
+    zoom: 0.78;
     margin-left: 82px;
     margin-right: 82px;
     gap: 1.5em;
