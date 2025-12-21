@@ -39,6 +39,41 @@ nav {
     color: white;
 }
 
+.finalistCard {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    zoom: 0.8;
+    margin-left: 82px;
+    margin-right: 82px;
+}
+
+.finalistTables {
+    display: flex;
+    flex-direction: column;
+}
+
+.finalistTables .civs td {
+    /* transform: skew(-20deg); */
+    text-align: left;
+    padding-left: 1.5rem;
+}
+
+.finalistTables .civs td.civ {
+    padding: 0.6rem 1.5rem;
+}
+
+.finalistTables .civ-cell {
+    width: 350px;
+}
+
+.finalistTables tr.subrow {
+    background-color: #640ae3;
+}
+
+.finalistTables tr.subrow:nth-child(2n+1) {
+    background-color: #9f55e4;
+}
+
 table.civs {
     border-collapse: collapse;
     background-color: #28045C;
