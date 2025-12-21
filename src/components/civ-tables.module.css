@@ -66,14 +66,6 @@ nav {
     width: 350px;
 }
 
-.finalistTables tr.subrow {
-    background-color: #640ae3;
-}
-
-.finalistTables tr.subrow:nth-child(2n+1) {
-    background-color: #9f55e4;
-}
-
 table.civs {
     border-collapse: collapse;
     background-color: #28045C;
